@@ -1,0 +1,490 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color:#ffffff;
+}
+
+
+
+.p1 {
+  font-family: prestige-elite-std, monospace;
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+}
+
+
+.p2 {
+  font-family: prestige-elite-std, monospace;
+}
+
+.p3 {
+  font-family: TNYAdobeCaslonPro,Times New Roman,Times,serif;
+  font-size: 18px;
+}
+
+#wrapper{
+  background-color:#ccc2c2;
+  width: 100%; 
+  max-width: 1200px; 
+  position: relative; 
+  margin: 0 auto; 
+  padding: 5px 0;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 10px 0 0 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+    padding: 0 20px 0 20px;
+}
+
+.navbar-links li a {
+    font-family: vollkorn, serif;
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    color: #262626;
+    padding: 5px;
+    
+}
+
+.navbar-links li:hover {
+   
+}
+
+.navbar-links ul li .underline {
+	height: 3px;
+	background-color: transparent;
+	width: 0%;
+	transition: width 0.8s, background-color 0.5s;
+	margin: 0 auto;
+    
+    
+}
+
+.navbar-links ul li.active-link .underline {
+	width: 100%;
+	background-color: #262626;
+}
+
+.navbar-links ul li:hover .underline {
+	background-color: #262626;
+	width: 100%;
+   
+}
+
+.navbar-links ul li:hover a {
+}
+
+.navbar-links ul li:active a {
+	transition: none;
+	color: rgba(255,255,255,0.76);
+}
+
+.navbar-links ul li:active .underline {
+	transition: none;
+	background-color: rgba(255,255,255,0.76);
+}
+
+
+
+.toggle-button {
+    position: absolute;
+    top: 25px;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #262626;
+    border-radius: 10px;
+}
+
+@media (max-width: 1028px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #FFFFFF;
+        
+        
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        
+    }
+
+    .navbar-links ul {
+        
+        flex-direction: column;
+        text-align: left;
+        width: 40%;
+        position:relative;
+        left: 35%;
+    }
+
+    .navbar-links ul li {
+        padding: 10px 0;
+        text-align: center; 
+        width: auto;  
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+        font-family: Arial;
+        
+        
+    }
+
+    .navbar-links.active {
+        display: flex;
+        
+    }
+}
+
+#content {
+  padding: 5px 0 5px 0 ; 
+  position: relative; 
+  overflow: hidden;
+  
+}
+
+.container {
+  position:relative; 
+  clear: both; 
+  width: 100%; 
+  max-width: 1200px; 
+  padding: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+
+/* Create three equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 300px; 
+  background-color:#fff;
+  position: relative;
+   
+}
+
+.column1 div.col1content {
+  position: absolute;
+  bottom: 60px;
+
+}
+    
+.column2 {
+  float: left;
+  width: 70%;
+  padding: 10px;
+  height: 550px;
+  background-color:#fff; 
+ 
+}
+
+.column3 {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 300px;
+  margin-top: 10px; 
+  background-color:#fff;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column1, .column2, .column3, {
+    width: 100%;
+  }
+}
+
+/* SLIDESHOW */
+
+/* Slideshow container */
+
+
+.mySlides {
+    display: none
+    
+}
+
+img       {
+    border-radius: 2%;
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+  
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 10px 2px;
+  background-color: #bbb;
+  border-radius: 10%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+    
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+ 
+/* END OF SLIDESHOW */
+
+
+/* GRID */
+
+.grid-card {
+  border: 1px solid #E5E5E5;
+  margin-bottom: 20px;
+}
+
+.grid-card:hover{
+  opacity: 0.7;
+}
+
+
+.grid-card-image {
+  max-width: 100%;
+ max-height: 100%;
+    
+}
+
+.grid-card-content {
+  padding: 5px;
+}
+
+.grid-card-content h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.grid-card-content p {
+  margin: 0.5em 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Grid measurements:
+ *
+ *   960px wide including 12 gutters (half gutters on both edges)
+ *
+ *   60px columns (12)
+ *   20px gutters (two half-gutters + 11 full gutters, so 12 total)
+ *
+ *
+ *   For smaller screens, we always want 20px of padding on either side,
+ *   so 960 + 20 + 20 => 1000px
+ *
+ **/
+.grid-row {
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+/* Clearfix */
+.grid-row::before,
+.grid-row::after {
+  display: table;
+  content: '';
+}
+
+.grid-row::after {
+  clear: both;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+  float: left;
+
+  /* Gutters:
+   * Each column is padded by half-a-gutter on each side,
+   *
+   * Half a gutter is 10px, 10/960 (context) = 1.041666%
+   *
+   */
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+/* Mobile defaults */
+.col-3, .col-4, .col-6, .col-12 {
+  width: 100%;
+}
+
+
+
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 550px) {
+  /* 3 columns, 3/12 in % */
+  .col-3 {
+    width: 25%;
+  }
+
+  /* 4 columns, 4/12 in % */
+  .col-4 {
+    width: 33.333333%;
+  }
+
+  /* 6 columns, 6/12 in % */
+  .col-6 {
+    width: 50%;
+  }
+
+  /* 12 columns, 12/12 in % */
+  .col-12 {
+    width: 100%;
+  }
+}
+
+/* End of GRID */
+
+
+
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #FFFF00;
+  color: #262626;
+  font-family: prestige-elite-std, monospace;
+  
+}
